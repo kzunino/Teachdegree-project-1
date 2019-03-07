@@ -1,1 +1,1 @@
-# Teachdegree-project-1
+# Teachdegree project 1
