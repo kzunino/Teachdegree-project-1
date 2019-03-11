@@ -1,5 +1,5 @@
 
-//Here I created an array containing 6 objects that function as the quotes for my project.
+//Here I created an array containing objects that function as the quotes for my project.
 //properties include: quote, source, citation (if available), year (if available).
 
 var quotes = [
@@ -16,13 +16,11 @@ var quotes = [
   {quote: 'Be the change that you wish to see in the world', source: 'Mahatma Gandhi'}
 ]
 
-/*'getRandomQuote' function gets a random quote object from the array.
-  Since array contains 6 objects starting from index value 0 to 5 I set randomQuote variable to
-  generate a random array number between index value 0 and the length of the array using the quotes.length method.
-*/
+//getRandomQuote' function gets a random quote object from the array.
+
 
 function getRandomQuote() {
-    var randomQuote = quotes[Math.floor(Math.random() * ((quotes.length - 1) - 0 + 1)) + 0]; //(quotes.length - 1) shortens array range by index value by 1 so it searches from 0 to 5.
+    var randomQuote = quotes[Math.floor(Math.random() * ((quotes.length - 1) - 0 + 1)) + 0]; //(quotes.length - 1) shortens array range by index value by 1 so it searches from 0 to number of objects.
     return randomQuote;
 }
 
@@ -45,11 +43,11 @@ if (randomQuote.year !== undefined) {
         ;
   }
     html += '</p>';
-    document.getElementById('quote-box').innerHTML = html;
+    document.getElementById('quote-box').innerHTML = html; //prints quote
     return html;      //-return html returns strings to html after conditions have been tested on the object.
   }
 
-  printQuote();
+  printQuote();      //prints first quote when page is refreshed or first opened otherwise defualt quote from html loads as first quote, which is not in the array
 /***
   When the "Show another quote" button is clicked, the event listener
   below will be triggered, and it will call, or "invoke", the `printQuote`
