@@ -45,11 +45,11 @@ if (randomQuote.year !== undefined) {
         ;
   }
     html += '</p>';
+    document.getElementById('quote-box').innerHTML = html;
     return html;      //-return html returns strings to html after conditions have been tested on the object.
   }
 
-document.getElementById('quote-box').innerHTML = printQuote();   //this expression pre-loads a quote from array so the default from the index.html doesn't display when site is first loaded.
-
+  printQuote();
 /***
   When the "Show another quote" button is clicked, the event listener
   below will be triggered, and it will call, or "invoke", the `printQuote`
@@ -57,9 +57,4 @@ document.getElementById('quote-box').innerHTML = printQuote();   //this expressi
   comment.
 ***/
 
-document.getElementById("loadQuote").addEventListener("click", function(){     //found this function from "https://www.w3schools.com/jsref/met_element_addeventlistener.asp" because pre-loaded event listener wasnt working.
-  document.getElementById('quote-box').innerHTML = printQuote();     //prints quote to the page
-});
-
-
-//document.getElementById("loadQuote").addEventListener("click", printQuote, false); //preloaded code that doesn't execute correctly.
+document.getElementById("loadQuote").addEventListener("click", printQuote, false);
