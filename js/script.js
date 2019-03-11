@@ -5,17 +5,17 @@ var quotes
 //properties include: quote, source, citation (if available), year (if available).
 
 quotes = [
-  {quote: '¡Qué vergüenza!', source: 'Ana Salamanca', citation: 'Bendito Seas, Colombia', tag: 'Humor'},
+  {quote: '¡Qué vergüenza!', source: 'Ana Salamanca', citation: 'Bendito Seas, Colombia', category: 'Humor'},
   {quote: 'Travel isn’t always pretty. It isn’t always comfortable. Sometimes it hurts, it even breaks your heart. But that’s okay. The journey changes you; it should change you. It leaves marks on your memory, on your consciousness, on your heart, and on your body. You take something with you. Hopefully, you leave something good behind.',
-    source: 'Anthony Bourdain', citation: 'No Reservations: Around the World on an Empty Stomach', year: 2007, tag: 'Inspirational'},
+    source: 'Anthony Bourdain', citation: 'No Reservations: Around the World on an Empty Stomach', year: 2007, category: 'Inspirational'},
   {quote: 'Consider it: every person you have ever met, every person will suffer the loss of his friends and family. All are going to lose everything they love in this world. Why would one want to be anything but kind to them in the meantime?',
-    source: 'Sam Harris', citation:  'The End of Faith: Religion, Terror, and the Future of Reason', year: 2007, tag: 'Inspirational, Buddhist'},
-  {quote: 'A journey of a thousand miles begins with a single step"', source: 'Laozi', citation: 'Chapter 64 of the Tao Te Ching', tag: 'Inspirational, Philosophy'},
+    source: 'Sam Harris', citation:  'The End of Faith: Religion, Terror, and the Future of Reason', year: 2007, category: 'Inspirational, Buddhist'},
+  {quote: 'A journey of a thousand miles begins with a single step"', source: 'Laozi', citation: 'Chapter 64 of the Tao Te Ching', category: 'Inspirational, Philosophy'},
   {quote: 'A person had to work hard for it, but a minute of perfection was worth the effort. A moment was the most you could ever expect from perfection.',
-    source: 'Tyler Durden', citation: 'Chuck Palahniuk, Fight Club', year: 1996, tag: 'Buddhist, Literature, Fiction, Philosophy'},
+    source: 'Tyler Durden', citation: 'Chuck Palahniuk, Fight Club', year: 1996, category: 'Buddhist, Literature, Fiction, Philosophy'},
   {quote: 'When the student is ready, the teacher appears', source: 'Dave', year: 2016,},
-  {quote: 'Be yourself. Everyone else is already taken', source: 'Oscar Wilde', year: '19th centry', tag: 'Inspirational, Poetry'},
-  {quote: 'Be the change that you wish to see in the world', source: 'Mahatma Gandhi', tag: 'Inspirational'}
+  {quote: 'Be yourself. Everyone else is already taken', source: 'Oscar Wilde', year: '19th centry', category: 'Inspirational, Poetry'},
+  {quote: 'Be the change that you wish to see in the world', source: 'Mahatma Gandhi', category: 'Inspirational'}
 ]
 
 //getRandomQuote' function gets a random quote object from the array.
@@ -44,9 +44,9 @@ if (randomQuote.year !== undefined) {
       }else if (randomQuote.year === undefined){
         ;
   }
-if (randomQuote.tag !== undefined){
-    html += '<span class="tag">' + randomQuote.tag + '</span>';
-  }else if (randomQuote === undefined){
+if (randomQuote.category !== undefined){
+    html += '<span class="category">' + randomQuote.category + '</span>';
+  }else if (randomQuote.category === undefined){
     ;
   }
     html += '</p>';
@@ -54,7 +54,7 @@ if (randomQuote.tag !== undefined){
     return html;      //-return html returns strings to html after conditions have been tested on the object.
   }
 
-  printQuote();      //prints first quote when page is refreshed or first opened otherwise defualt quote from html loads as first quote, which is not in the array
+printQuote();      //prints first quote when page is refreshed or first opened otherwise defualt quote from html loads as first quote, which is not in the array
 
 
 //random background function from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
@@ -67,7 +67,7 @@ function random_bg_color() {
       document.body.style.background = bgColor;
       }
 
-  random_bg_color();
+random_bg_color();
 
 //interval timer function from https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval
 

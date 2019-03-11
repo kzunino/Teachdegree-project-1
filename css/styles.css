@@ -71,15 +71,15 @@ body {
   font-style: normal;
 }
 
-.tag {
+.category {
   font-size: 12px;
 }
-.tag:before{
+.category:before{
   content: ", (";
   font-size: 12px;
   font-style: normal;
 }
-.tag:after{
+.category:after{
   content: ")";
   font-size: 12px;
   font-style: normal;
