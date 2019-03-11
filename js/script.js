@@ -13,7 +13,7 @@ quotes = [
   {quote: 'A journey of a thousand miles begins with a single step"', source: 'Laozi', citation: 'Chapter 64 of the Tao Te Ching', tag: 'Inspirational, Philosophy'},
   {quote: 'A person had to work hard for it, but a minute of perfection was worth the effort. A moment was the most you could ever expect from perfection.',
     source: 'Tyler Durden', citation: 'Chuck Palahniuk, Fight Club', year: 1996, tag: 'Buddhist, Literature, Fiction, Philosophy'},
-  {quote: 'When the student is ready, the teacher appears', source: 'Dave', year: 2016, tag:'Bar Philosophy' },
+  {quote: 'When the student is ready, the teacher appears', source: 'Dave', year: 2016,},
   {quote: 'Be yourself. Everyone else is already taken', source: 'Oscar Wilde', year: '19th centry', tag: 'Inspirational, Poetry'},
   {quote: 'Be the change that you wish to see in the world', source: 'Mahatma Gandhi', tag: 'Inspirational'}
 ]
@@ -44,7 +44,12 @@ if (randomQuote.year !== undefined) {
       }else if (randomQuote.year === undefined){
         ;
   }
-    html += '<span class="tag">' + randomQuote.tag + '</span></p>';
+if (randomQuote.tag !== undefined){
+    html += '<span class="tag">' + randomQuote.tag + '</span>';
+  }else if (randomQuote === undefined){
+    ;
+  }
+    html += '</p>';
     document.getElementById('quote-box').innerHTML = html; //prints quote
     return html;      //-return html returns strings to html after conditions have been tested on the object.
   }
