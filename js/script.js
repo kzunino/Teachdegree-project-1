@@ -12,6 +12,8 @@ var quotes = [
   {quote: 'A person had to work hard for it, but a minute of perfection was worth the effort. A moment was the most you could ever expect from perfection.',
     source: 'Tyler Durden', citation: 'Chuck Palahniuk, Fight Club', year: 1996},
   {quote: 'When the student is ready, the teacher appears', source: 'Dave', year: 2016},
+  {quote: 'Be yourself. Everyone else is already taken', source: 'Oscar Wilde', year: '19th centry'},
+  {quote: 'Be the change that you wish to see in the world', source: 'Mahatma Gandhi'}
 ]
 
 /*'getRandomQuote' function gets a random quote object from the array.
@@ -32,7 +34,7 @@ function printQuote() {
     var html = ' ';
     html += '<p class="quote">' + randomQuote.quote + '</p>';  //-html combines first two properties of objects
     html += '<p class="source">' + randomQuote.source + '';
-if (randomQuote.citation!== undefined) {                        //-undefined is use in place of null because if property is not found null prints "undefined to string"
+if (randomQuote.citation!== undefined) {                        //-undefined is use in place of null because if property is not found null prints "undefined" as part of string.
     html += '<span class="citation">' + randomQuote.citation + '</span>';
       }else if (randomQuote.citation === undefined) {
         ;                                               //-else if statement has a ';' to allow fucntion to take no action--i.e. no html or string is added to html variable. Source: MDN
@@ -55,4 +57,9 @@ document.getElementById('quote-box').innerHTML = printQuote();
   comment.
 ***/
 
-document.getElementById("loadQuote").addEventListener("click", printQuote, false);
+document.getElementById("loadQuote").addEventListener("click", function(){     //found this function from "https://www.w3schools.com/jsref/met_element_addeventlistener.asp" because pre-loaded event listener wasnt working.
+  document.getElementById('quote-box').innerHTML = printQuote();     //prints quote to the page
+});
+
+
+//document.getElementById("loadQuote").addEventListener("click", printQuote, false); //preloaded code that doesn't execute correctly.
