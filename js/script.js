@@ -1,5 +1,5 @@
 var quoteChangeTimer;
-var quotes
+var quotes;
 
 //Here I created an array containing objects that function as the quotes for my project.
 //properties include: quote, source, citation (if available), year (if available).
