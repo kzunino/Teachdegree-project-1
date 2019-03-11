@@ -48,7 +48,7 @@ if (randomQuote.year !== undefined) {
     return html;      //-return html returns strings to html after conditions have been tested on the object.
   }
 
-document.getElementById('quote-box').innerHTML = printQuote();
+document.getElementById('quote-box').innerHTML = printQuote();   //this expression pre-loads a quote from array so the default from the index.html doesn't display when site is first loaded.
 
 /***
   When the "Show another quote" button is clicked, the event listener
