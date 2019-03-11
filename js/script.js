@@ -15,17 +15,19 @@ var quotes = [
 ]
 
 /*'getRandomQuote' function gets a random quote object from the array.
-  Since array contains 6 objects starting from index value 0 to 5 I set the upper
-  limit of the math function to 5 and the lower limit to 0.
+  Since array contains 6 objects starting from index value 0 to 5 I set randomQuote variable to
+  generate a random array number between 0 and the length of the array using the quotes.length method.
 */
 
-function getRandomQuote(randomQuote) {
-    var randomQuote = quotes[Math.floor(Math.random() * (5 - 0 + 1)) + 0];
+function getRandomQuote() {
+    var randomQuote = quotes[Math.floor(Math.random() * ((quotes.length - 1) - 0 + 1)) + 0]; //(quotes.length - 1) shortens array range by index value by one so it searches from 0 to 5.
     return randomQuote;
 }
+
+
 //-printQuote function sets the random quote to call the getRandomQuote function and stores as a variable.
 
-function printQuote(html) {
+function printQuote() {
     var randomQuote = getRandomQuote();
     var html = ' ';
     html += '<p class="quote">' + randomQuote.quote + '</p>';  //-html combines first two properties of objects
