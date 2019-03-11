@@ -16,11 +16,11 @@ var quotes = [
 
 /*'getRandomQuote' function gets a random quote object from the array.
   Since array contains 6 objects starting from index value 0 to 5 I set randomQuote variable to
-  generate a random array number between 0 and the length of the array using the quotes.length method.
+  generate a random array number between index value 0 and the length of the array using the quotes.length method.
 */
 
 function getRandomQuote() {
-    var randomQuote = quotes[Math.floor(Math.random() * ((quotes.length - 1) - 0 + 1)) + 0]; //(quotes.length - 1) shortens array range by index value by one so it searches from 0 to 5.
+    var randomQuote = quotes[Math.floor(Math.random() * ((quotes.length - 1) - 0 + 1)) + 0]; //(quotes.length - 1) shortens array range by index value by 1 so it searches from 0 to 5.
     return randomQuote;
 }
 
@@ -45,6 +45,7 @@ if (randomQuote.year !== undefined) {
     html += '</p>';
     return html;      //-return html returns strings to html after conditions have been tested on the object.
   }
+
 document.getElementById('quote-box').innerHTML = printQuote();
 
 /***
